@@ -36,10 +36,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
   late ChatGPT api;
 
   void _translateEngToThai() {
-    final request = CompleteReq(
-        messages: translateEngToThai(word: _txtWord.text.toString()),
-        model: kTranslateModelV3,
-        max_tokens: 1000);
+    final request = CompleteReq(messages:
+        // translateEngToThai(word: _txtWord.text.toString()),
+        [], model: kTranslateModelV3, max_tokens: 1000);
     subscription = api
         .onCompleteStream(request: request)
         .asBroadcastStream()

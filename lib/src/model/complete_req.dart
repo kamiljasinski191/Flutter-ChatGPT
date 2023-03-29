@@ -3,7 +3,7 @@ part 'complete_req.g.dart';
 
 @JsonSerializable()
 class CompleteReq {
-  final String messages;
+  final List<dynamic> messages;
   final String model;
   final double temperature;
   final int max_tokens;

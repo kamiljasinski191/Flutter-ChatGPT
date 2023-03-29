@@ -7,7 +7,7 @@ part of 'complete_req.dart';
 // **************************************************************************
 
 CompleteReq _$CompleteReqFromJson(Map<String, dynamic> json) => CompleteReq(
-      messages: json['messages'] as String,
+      messages: json['messages'] as List<dynamic>,
       model: json['model'] as String,
       temperature: (json['temperature'] as num?)?.toDouble() ?? .3,
       max_tokens: json['max_tokens'] as int? ?? 100,
