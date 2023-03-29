@@ -7,7 +7,6 @@ import 'package:example/generate_img_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_buttonx/materialButtonX.dart';
 
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -51,29 +50,25 @@ class _TranslateScreenState extends State<TranslateScreen> {
     });
   }
 
-  void modelDataList() async{
-    final model = await ChatGPT.instance
-        .builder("token")
-        .listModel();
-
+  void modelDataList() async {
+    final model = await ChatGPT.instance.builder("token").listModel();
   }
 
-  void engineList() async{
-    final engines = await ChatGPT.instance
-        .builder("token")
-        .listEngine();
+  void engineList() async {
+    final engines = await ChatGPT.instance.builder("token").listEngine();
   }
 
   @override
   void initState() {
     api = ChatGPT.instance
-        .builder("",
-        baseOption: HttpSetup(receiveTimeout: 6000));
+        .builder("", baseOption: HttpSetup(receiveTimeout: 6000));
     super.initState();
   }
+
   @override
   void dispose() {
     subscription?.cancel();
+
     ///close stream complete text
     api.close();
     super.dispose();
@@ -123,17 +118,16 @@ class _TranslateScreenState extends State<TranslateScreen> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Padding(
-          padding: const EdgeInsets.only(right: 16.0),
-          child: MaterialButtonX(
-              message: "Translate",
-              height: 40.0,
-              width: 130.0,
-              color: Colors.blueAccent,
-              icon: Icons.translate,
-              iconSize: 18.0,
-              radius: 46.0,
-              onClick: () => _translateEngToThai())
-        ),
+            padding: const EdgeInsets.only(right: 16.0),
+            child: MaterialButtonX(
+                message: "Translate",
+                height: 40.0,
+                width: 130.0,
+                color: Colors.blueAccent,
+                icon: Icons.translate,
+                iconSize: 18.0,
+                radius: 46.0,
+                onClick: () => _translateEngToThai())),
       ],
     );
   }
