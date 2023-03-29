@@ -7,15 +7,13 @@ part of 'choices.dart';
 // **************************************************************************
 
 Choices _$ChoicesFromJson(Map<String, dynamic> json) => Choices(
-      json['text'] as String,
+      json['message'] as Map<String, dynamic>,
       json['index'] as int,
-      json['logprobs'],
       json['finish_reason'] as String,
     );
 
 Map<String, dynamic> _$ChoicesToJson(Choices instance) => <String, dynamic>{
-      'text': instance.text,
+      'message': instance.message,
       'index': instance.index,
-      'logprobs': instance.logprobs,
       'finish_reason': instance.finish_reason,
     };

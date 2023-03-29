@@ -143,7 +143,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
         child: Column(
           children: [
             Text(
-              _response?.choices.last.text ?? '...',
+              _response?.choices.last.message['content'] ?? '...',
               style: const TextStyle(color: Colors.black, fontSize: 18.0),
             ),
             SizedBox(
