@@ -37,7 +37,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
 
   void _translateEngToThai() {
     final request = CompleteReq(
-        prompt: translateEngToThai(word: _txtWord.text.toString()),
+        messages: translateEngToThai(word: _txtWord.text.toString()),
         model: kTranslateModelV3,
         max_tokens: 1000);
     subscription = api

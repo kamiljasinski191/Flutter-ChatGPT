@@ -7,7 +7,7 @@ part of 'complete_req.dart';
 // **************************************************************************
 
 CompleteReq _$CompleteReqFromJson(Map<String, dynamic> json) => CompleteReq(
-      prompt: json['prompt'] as String,
+      messages: json['messages'] as String,
       model: json['model'] as String,
       temperature: (json['temperature'] as num?)?.toDouble() ?? .3,
       max_tokens: json['max_tokens'] as int? ?? 100,
@@ -18,7 +18,7 @@ CompleteReq _$CompleteReqFromJson(Map<String, dynamic> json) => CompleteReq(
 
 Map<String, dynamic> _$CompleteReqToJson(CompleteReq instance) =>
     <String, dynamic>{
-      'prompt': instance.prompt,
+      'messages': instance.messages,
       'model': instance.model,
       'temperature': instance.temperature,
       'max_tokens': instance.max_tokens,
